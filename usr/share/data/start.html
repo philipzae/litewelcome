@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="css/welcome.css" rel="stylesheet" media="screen">
+</head>
+<body class="backdrop">
+  <div id="wrapper">
+    <div id="header" class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <h1>Starting with Linux Lite</h1>
+        </div>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li><a href="./index.html"><i class="icon icon-3x icon-home"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content" class="container-fluid">
+      <div class="row-fluid divider">
+        <div class="span12">
+          <h2>Install Updates</h2>
+          <p>Before you can begin using Linux Lite, your first need to run <b>Install Updates</b>.</p>
+          <p>Click on <b>Menu, Favorites, Install Updates</b>. On the next window that pops up, enter the password you created for your user during the installation.
+                Don't worry if you can't see your password as you type it, this is a security feature and prevents prying eyes from seeing what you type.</p>
+          <h2>Release Notes</h2>
+          <p>In this release we wanted to combine the newest versions of well established and supported software like LibreOffice, VLC, Wine and Gimp so that people have access to the latest features in those programs. In Linux Lite 2.0 you get the carefully crafted combination of current software in certain programs on top of a stable operating system. We think this is the happy medium people are looking for between long term support whilst also having 'the newest stuff'. This release also sneaks in at under CD size. Thank you to everyone who contributed ideas, code and their support. Please read the full online announcement <a href="cmd://link?https://www.linuxliteos.com/forums/index.php?topic=391">here first</a>.</p>
+          <p>Linux Lite 2.0 was released with the following features:</p>
+          <ul class="icons clean">
+            <li><i class="icon-check"></i>Firefox 29</li>
+            <li><i class="icon-check"></i>Kernel 3.13.0-24</li>
+            <li><i class="icon-check"></i>Whisker Menu</li>
+            <li><i class="icon-check"></i>Newest versions of: LibreOffice, VLC, Wine, Gimp and many more</li>
+            <li><i class="icon-check"></i>New 'lighter' theme</li>
+            <li><i class="icon-check"></i>New boot screen design</li>
+            <li><i class="icon-check"></i>Support link directly from the Internet Menu</li>
+            <li><i class="icon-check"></i>Support for hot-swapping usb audio devices - audio system will now automatically revert back to the default device when hot swapping usb audio devices</li>
+        </ul>
+	  <h2>Hardware Recommendations</h2>
+          <p>Linux Lite can run on a wide range of hardware. Our online <a href="cmd://link?http://www.linuxliteos.com/hwdb.html">Hardware Database</a> contains a growing list of computers that can run Linux Lite.
+             The lists below contains 2 recommendations. The first - a set of minimum recommended specs, the second - preferred specs.
+          <h3>Minimum Recommended Specs</h3>
+	<ul>
+            <li>700MHz processor</li>
+            <li>512mb ram</li>
+            <li>VGA screen capable of 1024x768 resolution</li>
+            <li>DVD drive or USB port for the ISO image</li>
+        </ul>
+          <h3>Preferred Specs</h3>
+	<ul>
+            <li>1.5GHz processor+</li>
+            <li>1024mb ram+</li>
+            <li>VGA, DVI or HDMI screen capable of 1366x768 resolution+</li>
+            <li>DVD drive or USB port for the ISO image</li>
+        </ul>
+          <div class="alert alert-info">
+            <p><a name="footnote_1"></a><b>TIP:</b> Check out the Linux Lite Hardware Database for a list of over 700 computers that can run Linux Lite. Click <a href="cmd://link?http://www.linuxliteos.com/hwdb.html">here</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="bottom">
+      <div class="footer-content">
+        <div class="form pull-right">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      var $nav = $('#navigation');
+      $nav.css('left', -$nav.outerWidth());
+      $nav.show();
+      $nav.delay(250).animate({ left: 0 }, 500);
+    });
+  </script>
+</body>
+</html>
