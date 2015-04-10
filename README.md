@@ -1,7 +1,7 @@
 litewelcome
 ===============
 
-Author - [Jerry Bezencon,](https://github.com/linuxlite/)
+Author - [Jerry Bezencon](https://github.com/linuxlite/)
 
 The Linux Lite Welcome Screen.
 
