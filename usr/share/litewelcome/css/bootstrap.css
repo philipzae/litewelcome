@@ -4228,12 +4228,12 @@ a.thumbnail:focus {
   line-height: 20px;
 }
 .alert-success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #468847;
+  background-color: #efefef;
+  border-color: #cccccc;
+  color: #575757;
 }
 .alert-success h4 {
-  color: #468847;
+  color: #575757;
 }
 .alert-danger,
 .alert-error {
