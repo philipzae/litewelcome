@@ -5,5 +5,5 @@ Authors - [Jerry Bezencon,](https://github.com/linuxlite/) [Misko-2083](https://
 
 The Linux Lite Welcome Screen.
 
-![](http://i.imgur.com/TgEJN31.png)
+![](http://i.imgur.com/tTEq0kW.png)
 
