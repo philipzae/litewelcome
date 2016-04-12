@@ -47,13 +47,15 @@ class WelcomeConfig(object):
         self._live = os.path.exists('/bootmnt/manjaro')
 
         # store full path to our binary
-        self._welcome_bin_path = os.path.abspath(inspect.getfile(inspect.currentframe()))
+        self._welcome_bin_path = os.path.abspath(inspect.getfile(
+            inspect.currentframe()))
 
         # store directory to our welcome configuration
         self._config_dir = os.path.expanduser('~/.config/lite/welcome/')
 
         # store full path to our autostart symlink
-        self._autostart_path = os.path.expanduser('~/.config/autostart/lite_welcome.desktop')
+        self._autostart_path = os.path.expanduser(
+            '~/.config/autostart/lite_welcome.desktop')
 
         # ensure our config directory exists
         if not os.path.exists(self._config_dir):
@@ -70,7 +72,8 @@ class WelcomeConfig(object):
         if state and not os.path.exists(self._autostart_path):
             # create the autostart symlink
             try:
-                os.symlink( '/usr/share/applications/lite_welcome.desktop', self._autostart_path )
+                os.symlink('/usr/share/applications/lite_welcome.desktop',
+                           self._autostart_path)
             except OSError as e:
                 print(e)
                 pass
@@ -84,6 +87,7 @@ class WelcomeConfig(object):
         # determine autostart state based on absence of the disable file
         self._autostart = os.path.exists(self._autostart_path)
 
+
 class LiteAppView(WebKit.WebView):
     def __init__(self):
         WebKit.WebView.__init__(self)
@@ -91,7 +95,8 @@ class LiteAppView(WebKit.WebView):
         self._config = WelcomeConfig()
 
         self.connect('load-finished', self._load_finished_cb)
-        self.connect('navigation-policy-decision-requested', self._nav_request_policy_decision_cb)
+        self.connect('navigation-policy-decision-requested',
+                     self._nav_request_policy_decision_cb)
         self.l_uri = None
 
     def _push_config(self):
@@ -101,9 +106,9 @@ class LiteAppView(WebKit.WebView):
 
         self.execute_script("$('#arch').html('{}')".format(self._config._arch))
         self.execute_script("$('#autostart').toggleClass('icon-check', {})\
-            .toggleClass('icon-check-empty', {})".format(to_json
-                (self._config._autostart), to_json(not self._config._autostart)))
-
+            .toggleClass('icon-check-empty', {})".format(
+            to_json(self._config._autostart), to_json(
+                not self._config._autostart)))
         """self.execute_script("$('#{}').hide()".format(
             'buildmanjaro' if self._config._live else 'install'))
         self.execute_script("$('#{}').hide()".format(
@@ -111,10 +116,12 @@ class LiteAppView(WebKit.WebView):
         self.execute_script("$('#{}').hide()".format(
             'password' if not self._config._live else '#'))
         """
+
     def _load_finished_cb(self, view, frame):
         self._push_config()
 
-    def _nav_request_policy_decision_cb(self, view, frame, net_req, nav_act, pol_dec):
+    def _nav_request_policy_decision_cb(self, view, frame, net_req, nav_act,
+                                        pol_dec):
         uri = net_req.get_uri()
 
         try:
@@ -134,8 +141,8 @@ class LiteAppView(WebKit.WebView):
         self.l_uri = uri
 
         page = urlopen(uri)
-        frame.load_string(page.read().decode("utf-8"), "text/html", 
-            "utf-8", page.geturl())
+        frame.load_string(page.read().decode("utf-8"), "text/html", "utf-8",
+                          page.geturl())
         pol_dec.ignore()
         return True
 
@@ -148,13 +155,13 @@ class LiteAppView(WebKit.WebView):
             if os.path.exists("/usr/scripts/updates-gui"):
                 Popen(['gksudo', '/usr/scripts/updates-gui'])
             else:
-                      print('lite-software not installed'.format(uri))
+                print('lite-software not installed'.format(uri))
 
         elif uri == 'start_software':
             if os.path.exists("/usr/bin/lite-software"):
                 Popen(['gksudo', 'lite-software'])
             else:
-                      print('lite-software not installed'.format(uri))
+                print('lite-software not installed'.format(uri))
 
         elif uri == 'lite-manual':
             Popen(['exo-open', "/usr/share/doc/litemanual/index.html"])
@@ -187,7 +194,8 @@ class WelcomeApp(object):
 
         # check for relative path
         if os.path.exists(os.path.join(self._location, 'data/')):
-            print('Using relative path for data source. Non-production testing.')
+            print(
+                'Using relative path for data source. Non-production testing.')
             self._data_path = os.path.join(self._location, 'data/')
         elif os.path.exists('/usr/share/litewelcome/'):
             print('Using /usr/share/litewelcome/ path.')
@@ -205,7 +213,9 @@ class WelcomeApp(object):
         w.set_wmclass('Welcome to Linux Lite', 'Welcome to Linux Lite')
         w.set_title('Welcome to Linux Lite')
         w.set_size_request(768, 496)
-        w.set_icon_from_file(os.path.join(self._data_path, "/usr/share/icons/hicolor/24x24/apps/llautostart.png"))
+        w.set_icon_from_file(os.path.join(
+            self._data_path,
+            "/usr/share/icons/hicolor/24x24/apps/llautostart.png"))
 
         # build webkit container
         mv = LiteAppView()
@@ -239,6 +249,7 @@ class WelcomeApp(object):
 
     def close(self, p1, p2):
         Gtk.main_quit(p1, p2)
+
 
 app = WelcomeApp()
 app.run()
