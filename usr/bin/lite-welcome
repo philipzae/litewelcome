@@ -100,9 +100,9 @@ class LiteAppView(WebKit.WebView):
         self.l_uri = None
 
     def _push_config(self):
-        # TODO: push notification should be connected to angularjs and use a broadcast event
-        # any suitable controllers will be able to listen and respond accordingly, for now
-        # we just use jQuery to manually toggle
+        # TODO: push notification should be connected to angularjs and use a
+        # broadcast event any suitable controllers will be able to listen and
+        # respond accordingly, for now we just use jQuery to manually toggle
 
         self.execute_script("$('#arch').html('{}')".format(self._config._arch))
         self.execute_script("$('#autostart').toggleClass('icon-check', {})\
