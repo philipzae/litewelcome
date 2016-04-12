@@ -93,7 +93,6 @@ class WelcomeConfig(object):
 class LiteAppView(WebKit.WebView):
     def __init__(self):
         WebKit.WebView.__init__(self)
-         
         self._config = WelcomeConfig()
         settings = self.get_settings()
         settings.set_property('enable-default-context-menu', False)
