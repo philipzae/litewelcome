@@ -32,6 +32,8 @@ except ImportError:
     from urllib import urlopen, pathname2url
 from webbrowser import open_new_tab
 from json import dumps as to_json
+import gi
+gi.require_version('WebKit', '3.0')
 from gi.repository import WebKit, Gtk
 
 
@@ -93,7 +95,7 @@ class LiteAppView(WebKit.WebView):
         WebKit.WebView.__init__(self)
 
         self._config = WelcomeConfig()
-
+        self.set_property('enable-default-context-menu', False)
         self.connect('load-finished', self._load_finished_cb)
         self.connect('navigation-policy-decision-requested',
                      self._nav_request_policy_decision_cb)
