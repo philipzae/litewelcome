@@ -111,13 +111,12 @@ class LiteAppView(WebKit.WebView):
             .toggleClass('icon-check-empty', {})".format(
             to_json(self._config._autostart), to_json(
                 not self._config._autostart)))
-        """self.execute_script("$('#{}').hide()".format(
-            'buildmanjaro' if self._config._live else 'install'))
-        self.execute_script("$('#{}').hide()".format(
-            'donations' if self._config._live else 'install-cli'))
-        self.execute_script("$('#{}').hide()".format(
-            'password' if not self._config._live else '#'))
-        """
+        # self.execute_script("$('#{}').hide()".format(
+        #    'buildmanjaro' if self._config._live else 'install'))
+        # self.execute_script("$('#{}').hide()".format(
+        #    'donations' if self._config._live else 'install-cli'))
+        # self.execute_script("$('#{}').hide()".format(
+        #    'password' if not self._config._live else '#'))
 
     def _load_finished_cb(self, view, frame):
         self._push_config()
