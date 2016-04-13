@@ -215,9 +215,8 @@ class WelcomeApp(object):
         w.set_wmclass('Welcome to Linux Lite', 'Welcome to Linux Lite')
         w.set_title('Welcome to Linux Lite')
         w.set_size_request(768, 496)
-        w.set_icon_from_file(os.path.join(
-            self._data_path,
-            "/usr/share/icons/hicolor/24x24/apps/llautostart.png"))
+        w.set_icon_from_file(os.path.join(self._data_path,
+                             "/icons/lite-welcome.png"))
 
         # build webkit container
         mv = LiteAppView()
