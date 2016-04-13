@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+  <link href="css/welcome.css" rel="stylesheet" media="screen">
+</head>
+<body class="backdrop">
+  <div id="wrapper">
+    <div id="header" class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+          <h1>Get Support</h1>
+        </div>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li><a href="./index.html"><i class="icon icon-3x icon-home"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content" class="container-fluid">
+      <div class="row-fluid divider">
+       <div class="span12">
+          <center><h2><text class="icon-group">&nbsp;</text>Online Support</h2>
+          <p>Linux Lite aims to provide you with a variety of Support options.</p>
+          <p>&nbsp;</p>
+          <h2><text class="icon-book">&nbsp;</text>Help Manual</h2>
+          <p>Click on <b>Menu, Favorites, Help Manual</b>. The Help Manual is divided into clear categories - <b>Install Guide, Network, Software and Hardware</b>. Each tutorial has step by step instructions, with accompanying pictures. You can also access our <b>Help Manual</b> online by clicking here:</p>
+           <a class="btn btn-inverse btn-large" href="cmd://link?http://www.linuxliteos.com/manual/"><i class="icon-book"></i> Online Help Manual</a></p><img src="img/header-shadow.png"></img>
+
+          <h2><text class="icon-comment">&nbsp;</text>Forums</h2>
+          <p>Forums are a great resource for information. Begin by searching for your problem here: </p>
+           <a class="btn btn-inverse btn-large" href="cmd://link?http://www.linuxliteos.com/forums/index.php?action=search"><i class="icon-search"></i> Search the Fourms</a></p>
+
+              <p>If no results turn up, by all means please post a new thread in the correct section clearly describing your situation. You can register on the forums by clicking here:</p>
+           <a class="btn btn-inverse btn-large" href="cmd://link?http://www.linuxliteos.com/forums/index.php?action=register"><i class="icon-pencil"></i> Forum Registration</a></p>
+
+               <p> Once you have activated your account, you'll need to login before you can post.</p>
+           <a class="btn btn-inverse btn-large" href="cmd://link?http://www.linuxliteos.com/forums/"><i class="icon-comment"></i> Forum Login</a></p><img src="img/header-shadow.png"></img>
+
+          <h2><text class="icon-info-sign">&nbsp;</text>Hardware Database</h2>
+          <p>The purpose of the <b>Linux Lite Hardware Database</b> is to give people an idea of different computer configurations from within a Linux Lite Series including, <b>Make and Model, CPU, Graphics, Audio, Network and Storage</b> technical specifications. These hardware combinations provide a snapshot of the kind of computers people are able to use with Linux Lite.
+		  This makes it a great resource for people either thinking of buying new hardware, or seeing if their existing machine is capable of running Linux Lite.
+		  You can view the <b>Hardware Database</b> by clicking here:</p>
+                  <a class="btn btn-inverse btn-large" href="cmd://link?http://www.linuxliteos.com/hardware.php"><i class="icon-info-sign"></i> Hardware Database</a></p><img src="img/header-shadow.png"></img>
+
+          <div class="alert alert-success">
+            <p><a name="footnote_1"></a><b>TIP:</b> <a href="cmd://link?https://www.linuxliteos.com/forums/">The Forums</a> are the best avenue for seeking answers. Our members are very generous with their time and there are always people willing to help you. Get help today.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" class="bottom">
+      <div class="footer-content">
+        <div class="form pull-right">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      var $nav = $('#navigation');
+      $nav.css('left', -$nav.outerWidth());
+      $nav.show();
+      $nav.delay(250).animate({ left: 0 }, 500);
+    });
+  </script>
+</body>
+</html>
