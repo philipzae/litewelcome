@@ -1,0 +1,6 @@
+Changes for 1.0-0180:
+- Compressed images.
+- Fix window icon not displayed.
+- Disable right click.
+- Fix python3 import error for webkit.
+- General linting.
