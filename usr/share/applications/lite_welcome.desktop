@@ -9,4 +9,4 @@ OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=false
-Icon=menu-icon
+Icon=/usr/share/litewelcome/icons/lite-welcome.png
