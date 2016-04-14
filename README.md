@@ -9,6 +9,9 @@ The Linux Lite Welcome Screen.
 
 ![](http://i.imgur.com/tTEq0kW.png)
 
+## License ![License](https://img.shields.io/badge/license-GPLv3-green.svg)
+This project is under the GPLv3 license. Unless otherwise stated in indavidual files.
+
 
 ##Authors
 - [Jerry Bezencon](https://github.com/linuxlite/)
